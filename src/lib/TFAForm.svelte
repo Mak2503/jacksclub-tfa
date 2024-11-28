@@ -5,8 +5,8 @@
 
   let otp = $state(["", "", "", "", "", ""]);
   let buttonText = $state(`${6} digits left`);
-
   let correctOtp = $state("123456");
+  let otpValue = $derived(otp.join(""));
 
   const getDocument = (id) => document.getElementById(id);
 
@@ -17,9 +17,11 @@
     if (/^\d$/.test(value)) {
       otp[index] = value;
 
+      // Hide the current cursor
       const currentCursor = getDocument(`cursor-${index}`);
       currentCursor.style.display = "none";
 
+      // Change the current input field's border color
       const currentInput = getDocument(`otp-${index}`);
       currentInput.style.borderColor = "#0794ff";
 
@@ -30,6 +32,7 @@
         nextInput.style.borderColor = "#0794ff";
       }
 
+      // Show the next cursor
       const nextCursor = getDocument(`cursor-${index + 1}`);
       if (nextCursor) {
         nextCursor.style.display = "block";
@@ -70,6 +73,7 @@
     }
   }
 
+  // Focus on the first input field and show the first cursor
   onMount(() => {
     let input = getDocument(`otp-0`);
     let cursor = getDocument(`cursor-0`);
@@ -85,14 +89,13 @@
     Enter 6-digit code from your two factor authenticator APP.
   </p>
   <div
-    class="tfa-code {otp.join('').length === 6 && otp.join('') !== correctOtp
+    class="tfa-code {otpValue.length === 6 && otpValue !== correctOtp
       ? 'shake'
       : ''}"
   >
     {#each otp as digit, i}
       <div
-        class="code-input {otp.join('').length === 6 &&
-        otp.join('') !== correctOtp
+        class="code-input {otpValue.length === 6 && otpValue !== correctOtp
           ? 'wrong-code'
           : 'correct-code'}"
         style={i === 3 && "margin-left: 30px;"}

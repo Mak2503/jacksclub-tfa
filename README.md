@@ -1,6 +1,8 @@
 # Svelte + Vite
 
-This template should help get you started developing with Svelte in Vite.
+This is a simple two-factor authentication app built with Svelte and Vite.
+
+ie. For testing purpose, the correct OTP is `123456`.
 
 ## Recommended IDE Setup
 
