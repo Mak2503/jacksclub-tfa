@@ -4,11 +4,7 @@
   const otpValue = $derived(otp.join(""));
   const isOtpValid = $derived(otpValue === correctOtp);
   const backgroundColor = $derived(
-    otpValue.length !== 6
-      ? "#e4f5ff"
-      : isOtpValid
-        ? "#E8FEF3"
-        : "var(--danger-bg)"
+    otpValue.length !== 6 ? "#e4f5ff" : isOtpValid ? "#E8FEF3" : "#FFEEF0"
   );
   const svgColor = $derived(
     otpValue.length !== 6 ? "#0794ff" : isOtpValid ? "#1AAF82" : "#FD4B63"

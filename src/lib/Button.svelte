@@ -20,16 +20,8 @@
 
 <style>
   button {
-    padding: 30px;
-    color: #798492;
-    font-size: 28px;
-    font-weight: 600;
-    width: 100%;
     background: linear-gradient(to left, #0794ff 50%, #edeef1 50%);
     background-size: 200% 100%;
     background-position: right bottom;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
   }
 </style>

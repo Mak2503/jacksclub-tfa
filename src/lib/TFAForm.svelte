@@ -118,6 +118,7 @@
 </div>
 
 <style>
+  /* To hide the number slider in input */
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
