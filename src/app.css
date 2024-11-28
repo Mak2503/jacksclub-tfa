@@ -5,11 +5,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* colors */
-  --bg: #E4F5FF;
-  --danger-bg: #FFEEF0;
-
-  background-color: var(--bg);
+  background-color: #E4F5FF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
